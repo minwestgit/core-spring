@@ -25,9 +25,8 @@ public class OrderServiceImpl implements OrderService{
 
     // 생성자 의존관계 주입 방법
     // 생성자가 1개이기 때문에, @Autowired 생략 가능
-    //public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
